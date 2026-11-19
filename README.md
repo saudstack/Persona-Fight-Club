@@ -1,14 +1,14 @@
 # Persona Fight Club
 
-Paste a product idea. Five AI personas argue about it in a live group chat, then each votes on whether they would pay for it. A Survival Score is calculated from the votes.
+Paste a product idea. 10 AI personas argue about it in a live group chat, then each votes on whether they would pay for it. A Survival Score is calculated from the votes.
 
 Everything runs on your own machine. No API keys, no accounts, no backend, and nothing you type is sent anywhere. The AI is a small open model served locally by [Ollama](https://ollama.com).
 
-![Survival Score result](docs/screenshot-result.png)
+![Survival Score result](main/screenshot-result.png)
 
 ## Features
 
-- Five personas: The Cynical VC, The Broke College Student, The Enterprise CFO, The Gen-Z TikToker, The Grumpy Senior Engineer
+- 10 personas: The Cynical VC, The Broke College Student, The Enterprise CFO, The Gen-Z TikToker, The Grumpy Senior Engineer
 - Two rounds of replies that stream in one persona at a time
 - **Mock mode (default):** canned replies, works with zero setup
 - **Local model mode:** real replies from Ollama, with a model picker that lists whatever you have installed
