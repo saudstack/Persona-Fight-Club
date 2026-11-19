@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1ea">
+    <title>Persona Fight Club — Put your idea in the room</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Persona Fight Club home">
+          <span class="brand-mark" aria-hidden="true">P<span>F</span></span>
+          <span class="brand-name">PERSONA <b>FIGHT CLUB</b></span>
+        </a>
+        <div class="mode-badge"><span class="mode-dot"></span> <span id="mode-label">Mock mode</span> <span class="mode-note" id="mode-note">· canned perspectives</span><label class="mode-toggle"><input id="local-model" type="checkbox" autocomplete="off"> Local model</label><label class="model-picker" id="model-picker" hidden>Model <select id="model-select" disabled></select></label></div>
+      </header>
+
+      <main class="workspace">
+        <section class="main-column" aria-labelledby="page-title">
+          <div class="intro">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A tiny room full of opinions</p>
+            <h1 id="page-title">Your idea, <span>under fire.</span></h1>
+            <p class="intro-copy">Ten opinionated reviewers. One round. No polite nodding.</p>
+          </div>
+
+          <form class="idea-form" id="idea-form">
+            <div class="writing-modes" role="group" aria-label="Writing mode">
+              <button type="button" data-mode="app" aria-pressed="true">App idea</button>
+              <button type="button" data-mode="social" aria-pressed="false">Social post</button>
+              <button type="button" data-mode="linkedin" aria-pressed="false">LinkedIn post</button>
+              <button type="button" data-mode="email" aria-pressed="false">Email</button>
+            </div>
+            <label id="idea-label" for="idea-input">Bring your app idea to the table</label>
+            <textarea id="idea-input" name="idea" rows="3" maxlength="800" placeholder="A meal-planning app for people who hate meal planning…" required></textarea>
+            <div class="example-ideas" aria-label="Example ideas">
+              <button type="button">A $9/month AI app that writes your emails</button>
+              <button type="button">A free app that splits bills between flatmates</button>
+              <button type="button">A $200/month dashboard for fleet managers</button>
+            </div>
+            <div class="form-footer">
+              <span class="form-hint">Keep it clear. The room will do the rest.</span>
+              <button class="start-button" id="start-button" type="submit">
+                <span>Start the fight</span><span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </form>
+
+          <section class="fight-section" aria-labelledby="fight-heading">
+            <div class="fight-heading-row">
+              <div>
+                <p class="section-kicker">THE FLOOR IS OPEN</p>
+                <h2 id="fight-heading">The conversation</h2>
+              </div>
+              <span class="round-count" id="round-count">READY WHEN YOU ARE</span>
+            </div>
+
+            <div class="error-message" id="error-message" role="alert" hidden></div>
+            <div class="conversation" id="conversation" aria-live="polite" aria-relevant="additions text">
+              <div class="empty-state" id="empty-state">
+                <div class="empty-art" aria-hidden="true">
+                  <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+                  <span class="empty-center">?</span>
+                  <span class="mini-face face-one">VC</span><span class="mini-face face-two">Zz</span>
+                  <span class="mini-face face-three">$$</span>
+                </div>
+                <h3>It’s quiet in here.</h3>
+                <p>Drop in an idea and ten wildly different instincts will take it from there.</p>
+              </div>
+            </div>
+            <div class="typing-slot" id="typing-slot" aria-live="polite"></div>
+            <section id="fixes-section" class="results-card" aria-labelledby="fixes-heading" hidden>
+              <h2 id="fixes-heading">Fixes</h2>
+              <div id="fixes-list"></div>
+              <button type="button" id="make-final" class="start-button">Make final version</button>
+            </section>
+            <section id="rewrite-section" class="results-card" aria-labelledby="rewrite-heading" hidden>
+              <h2 id="rewrite-heading">Rewrite</h2>
+              <div class="rewrite-columns">
+                <div><h3>Original</h3><pre id="original-text"></pre></div>
+                <div><h3>Final version</h3><pre id="final-text" aria-live="polite"></pre></div>
+              </div>
+              <button type="button" id="copy-final" class="copy-result">Copy</button>
+              <button type="button" id="try-another" class="copy-result">Try another version</button>
+            </section>
+            <section id="results-card" class="results-card" aria-labelledby="results-heading" aria-live="polite" hidden></section>
+          </section>
+          <footer class="page-foot"><span>Ten voices. One round. One honest first impression.</span><span>LOCAL MOCK · NOT REAL AI</span></footer>
+        </section>
+
+        <aside class="roster" aria-labelledby="roster-heading">
+          <div class="roster-top">
+            <p class="section-kicker">THE LINEUP</p>
+          <span class="roster-total">10 / 10</span>
+          </div>
+          <h2 id="roster-heading">Meet the room.</h2>
+          <p class="roster-intro">Each one brings a different kind of inconvenient truth.</p>
+          <ul class="persona-list" id="persona-list">
+            <li class="persona-card" style="--persona: #bd5b43; --persona-pale: #f7e7e0">
+              <span class="persona-emoji" aria-hidden="true">🦈</span>
+              <div><h3>The Cynical VC</h3><p>Thinks in exits, moats, and why now.</p></div>
+              <span class="persona-index">01</span>
+            </li>
+            <li class="persona-card" style="--persona: #b28519; --persona-pale: #f5efd9">
+              <span class="persona-emoji" aria-hidden="true">🧃</span>
+              <div><h3>The Broke College Student</h3><p>Will try it. Won’t pay for it.</p></div>
+              <span class="persona-index">02</span>
+            </li>
+            <li class="persona-card" style="--persona: #557a6b; --persona-pale: #e4ede8">
+              <span class="persona-emoji" aria-hidden="true">🧾</span>
+              <div><h3>The Enterprise CFO</h3><p>Show the savings. Then the contract.</p></div>
+              <span class="persona-index">03</span>
+            </li>
+            <li class="persona-card" style="--persona: #825e9c; --persona-pale: #eee6f3">
+              <span class="persona-emoji" aria-hidden="true">📱</span>
+              <div><h3>The Gen-Z TikToker</h3><p>Has three seconds and excellent taste.</p></div>
+              <span class="persona-index">04</span>
+            </li>
+            <li class="persona-card" style="--persona: #526f91; --persona-pale: #e5ebf2">
+              <span class="persona-emoji" aria-hidden="true">🛠️</span>
+              <div><h3>The Grumpy Senior Engineer</h3><p>Asks what breaks at 2 a.m.</p></div>
+              <span class="persona-index">05</span>
+            </li>
+            <li class="persona-card" style="--persona: #9b3d62; --persona-pale: #f4e0e8">
+              <span class="persona-emoji" aria-hidden="true">✂️</span>
+              <div><h3>The Ruthless Editor</h3><p>Cuts waste, hates filler.</p></div>
+              <span class="persona-index">06</span>
+            </li>
+            <li class="persona-card" style="--persona: #366b7a; --persona-pale: #dfedf1">
+              <span class="persona-emoji" aria-hidden="true">⏱️</span>
+              <div><h3>The Busy Executive</h3><p>Reads two lines then decides.</p></div>
+              <span class="persona-index">07</span>
+            </li>
+            <li class="persona-card" style="--persona: #786326; --persona-pale: #f0ead6">
+              <span class="persona-emoji" aria-hidden="true">🧶</span>
+              <div><h3>The Plain-Speaking Grandma</h3><p>Flags jargon and confusion.</p></div>
+              <span class="persona-index">08</span>
+            </li>
+            <li class="persona-card" style="--persona: #514e9c; --persona-pale: #e7e5f5">
+              <span class="persona-emoji" aria-hidden="true">💼</span>
+              <div><h3>The Hiring Manager</h3><p>Looks for clarity and professionalism.</p></div>
+              <span class="persona-index">09</span>
+            </li>
+            <li class="persona-card" style="--persona: #a34c21; --persona-pale: #f5e5da">
+              <span class="persona-emoji" aria-hidden="true">🎯</span>
+              <div><h3>The Marketing Strategist</h3><p>Checks the hook, audience, and CTA.</p></div>
+              <span class="persona-index">10</span>
+            </li>
+          </ul>
+          <div class="roster-note">
+            <span class="note-mark" aria-hidden="true">i</span>
+            <p><strong>Mock mode, honestly.</strong> These are pre-written perspectives, not live AI or market research.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

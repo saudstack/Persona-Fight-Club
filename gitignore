@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Replit
+.replit
+replit.nix
+replit.md
+.config/
+.local/
+.upm/
+attached_assets/
+
+# Editors
+.vscode/
+.idea/
+
+# Secrets and dependencies (none used today, kept for safety)
+.env
+node_modules/
