@@ -4,7 +4,7 @@ Paste a product idea. 10 AI personas argue about it in a live group chat, then e
 
 Everything runs on your own machine. No API keys, no accounts, no backend, and nothing you type is sent anywhere. The AI is a small open model served locally by [Ollama](https://ollama.com).
 
-![Survival Score result](main/screenshot-result.png)
+![Survival Score result](screenshot-result.png)
 
 ## Features
 
